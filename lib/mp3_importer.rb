@@ -10,7 +10,8 @@ class MP3Importer
   
   def files
     all_files = []
-    all_files = Dir["#{path}"]
+    all_files = Dir["#{@path}"]
+    #Dir.new('#').each {|file| puts file }
     all_files.each do |file|
       temp_files = []
       temp_files = file.split("/")
