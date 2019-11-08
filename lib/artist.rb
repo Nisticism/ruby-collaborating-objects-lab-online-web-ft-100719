@@ -29,8 +29,10 @@ class Artist
       artist_names << artist.name
     end
     if artist_names.include?(name)
-      @@all.select do |artist|
-        artist.name = name
+      @@all.each do |artist|
+        if artist.name == name
+          return artist 
+        end
       end
     else 
       new_artist = Artist.new(name)
