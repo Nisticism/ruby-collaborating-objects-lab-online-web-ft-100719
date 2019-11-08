@@ -14,7 +14,7 @@ class MP3Importer
     all_files.each do |file|
       temp_files = []
       temp_files = file.split("/")
-      new_all_files << temp_files.last
+      new_all_files << temp_files.last if temp_files.last != ".." && temp_files.last != "."
     end
     new_all_files.each do |file|
       puts file
